@@ -26,6 +26,5 @@
   "dependencies": {
     "body-parser": "^1.20.0",
     "express": "^4.17.1"
-  },
-  "engines": { "node": "17.9.1" }
+  }
 }
