@@ -6,8 +6,9 @@
   "scripts": {
     "start": "tsc && node dist/app.js",
     "lint": "eslint . --ext .ts",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "tsc",
+    "postinstall": "npm run tsc",
     "watch-node": "nodemon dist/index.js",
     "watch-ts": "tsc -w",
     "deploy": "git add . && git commit -m Heroku && git push heroku master"
