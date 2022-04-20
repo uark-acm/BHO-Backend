@@ -1,4 +1,3 @@
-/*
 import { ClothingItem, ClothingItemDatabaseRow, DatabaseRowToClothingItem } from "@uark-acm/bho-data-models/lib";
 import databaseConnection from "../loaders/postgres"
 
@@ -10,4 +9,3 @@ export const getClothingItems = async (): Promise<ClothingItem[]> => {
         return DatabaseRowToClothingItem(item)
     });
 }
-*/
