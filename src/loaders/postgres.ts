@@ -1,10 +1,11 @@
-const { Client } = require('pg');
+import { Client, Pool } from "pg";
 
-const client = new Client({
+const databaseConnection = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
     }
-});
+})
+databaseConnection.connect();
 
-export default client;
+export default databaseConnection;

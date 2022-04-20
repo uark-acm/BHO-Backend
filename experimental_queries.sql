@@ -55,15 +55,29 @@ create table clothing_items (
     clothing_item_size varchar ( 50 ) references clothing_item_sizes(clothing_item_size),
     clothing_item_description varchar ( 250 )
 );
+insert into clothing_items
+    values (default, 'TOP', 'MENS', 'READY', 'CLEAN', 'M', 'White Dress Shirt');
+insert into clothing_items
+    values (default, 'BOTTOM', 'MENS', 'READY', 'CLEAN', 'M', 'Slacks');
+insert into clothing_items
+    values (default, 'FOOTWEAR', 'MENS', 'READY', 'CLEAN', 'M', 'Blue Suede Shoes');
+insert into clothing_items
+    values (default, 'TOP', 'WOMENS', 'READY', 'CLEAN', 'M', 'White Dress Blouse');
 
 create table orders (
     id serial primary key,
-    pickup_date_time date not null,
-    return_date_time date not null,
-    client_first_name varchar ( 50 ) not null,
-    client_last_name varchar ( 50 ) not null,
+    pickup_date_time date,
+    return_date_time date,
+    client_name varchar ( 50 ) not null,
     client_email varchar ( 50 ) not null,
+    check_out_associate varchar ( 50 ),
+    check_in_associate varchar ( 50 ),
     clothing_item_id int references clothing_items(id)
 );
-
+insert into orders
+    values (default, '2022-04-20T05:10:41.026Z', '2017-03-14', 'jack', 'norris', 'boss hog', 'boss hog', 1);
+insert into orders
+    values (default, '2022-04-20T05:10:41.026Z', '2017-03-14', 'chuck', 'norris', 'jim hog', 'boss hog', 2);
+insert into orders
+    values (default, '2022-04-20T05:10:41.026Z', '2017-03-14', 'harry', 'potter', 'harry hog', 'boss hog', 3);
 
