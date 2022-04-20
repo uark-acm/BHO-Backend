@@ -4,7 +4,7 @@ import databaseConnection from "../loaders/postgres"
 
 export const getClothingItems = async (): Promise<ClothingItem[]> => {
     const queryResponse = await databaseConnection.query('select * from clothing_items;');
-    const dbClothingItems: ClothingItemDatabaseRow[] = (await queryResponse).rows;
+    const dbClothingItems: ClothingItemDatabaseRow[] = queryResponse.rows;
     return dbClothingItems.map(item => {
         return DatabaseRowToClothingItem(item)
     });
