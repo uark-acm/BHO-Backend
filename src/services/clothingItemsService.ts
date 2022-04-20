@@ -8,4 +8,4 @@ export const getClothingItems = async (): Promise<ClothingItem[]> => {
     return dbClothingItems.map(item => {
         return DatabaseRowToClothingItem(item)
     });
-}
+} 
