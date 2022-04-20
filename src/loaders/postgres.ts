@@ -1,4 +1,4 @@
-import { Client, Pool } from "pg";
+const {Pool} = require("pg");
 
 const databaseConnection = new Pool({
     connectionString: process.env.DATABASE_URL,
