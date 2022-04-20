@@ -9,3 +9,4 @@ export const getClothingItems = async (): Promise<ClothingItem[]> => {
         return DatabaseRowToClothingItem(item)
     });
 } 
+ 
