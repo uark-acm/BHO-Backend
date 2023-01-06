@@ -1,26 +1,5 @@
-import { Model, Optional, Sequelize, DataTypes } from 'sequelize';
+import { Model, Optional, DataTypes } from 'sequelize';
 import { sequelize } from '../loaders/sequelize';
-
-
-/*
-export const bho_item_category_model = (sequelize: Sequelize) => {
-    return sequelize.define("bho_item_category", {
-        id: {
-            primaryKey: true,
-            type: DataType.INTEGER,
-            allowNull: false
-        },
-        category_name: {
-            type: DataType.STRING,
-            allowNull: false
-        },
-        sizes: {
-            type: DataType.ARRAY(DataType.STRING),
-            allowNull: false
-        }
-    })
-}
-*/
 
 type BHOItemCategoryAttributes = {
     id: number,

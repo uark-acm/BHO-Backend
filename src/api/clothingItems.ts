@@ -1,11 +1,11 @@
 import databaseConnection from "../loaders/postgres";
 import { Express } from 'express';
-import { getClothingItems } from "../services/clothingItemsService";
 import { CreateClothingItemRequest } from "@uark-acm/bho-data-models/lib";
+import { getItems } from "../services/clothingItemsService";
 
 const configureClothingItemEndpoints = (app: Express) => {
     app.get('/clothingItems', async (req, res) => {
-       const clothes = await getClothingItems();
+       const clothes = await getItems();
        res.send(clothes);
     });
 

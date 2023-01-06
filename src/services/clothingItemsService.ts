@@ -1,12 +1,9 @@
 import { ClothingItem, ClothingItemDatabaseRow, DatabaseRowToClothingItem } from "@uark-acm/bho-data-models/lib";
 import databaseConnection from "../loaders/postgres"
+import BHOItem from "../models/bho_item.model";
 
 
-export const getClothingItems = async (): Promise<ClothingItem[]> => {
-    const queryResponse = await databaseConnection.query('select * from clothing_items;');
-    const dbClothingItems: ClothingItemDatabaseRow[] = queryResponse.rows;
-    return dbClothingItems.map(item => {
-        return DatabaseRowToClothingItem(item)
-    });
+export const getItems = async (): Promise<BHOItem[]> => {
+    return await BHOItem.findAll()
 } 
  

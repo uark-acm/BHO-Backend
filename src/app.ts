@@ -11,7 +11,6 @@ configureEndpoints(express_app);
 express_app.listen(port, async () => {
   await sequelizeConnection()
   await initializeModels()
-  BHOItemCategory.create({category_name: "hello", sizes: []})
   console.log("All models were synchronized successfully.");
   return console.log(`Express is listening at http://localhost:${port}`);
 });

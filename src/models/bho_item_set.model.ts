@@ -1,22 +1,5 @@
-import { Model, Optional, Sequelize, DataTypes } from 'sequelize';
+import { Model, Optional, DataTypes } from 'sequelize';
 import { sequelize } from '../loaders/sequelize';
-
-
-/*
-export const bho_item_set_model = (sequelize: Sequelize) => {
-  return sequelize.define("bho_item_set", {
-    id: {
-        primaryKey: true,
-        type: DataType.INTEGER,
-        allowNull: false
-      },
-      set_type: {
-        type: DataType.STRING,
-        allowNull: false
-    }
-  })
-}
-*/
 
 type BHOItemSetAttributes = {
   id: number,

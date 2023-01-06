@@ -1,54 +1,9 @@
-import { Model, Optional, Sequelize, DataTypes } from 'sequelize';
-import internal from 'stream';
+import { Model, Optional, DataTypes } from 'sequelize';
 import { sequelize } from '../loaders/sequelize';
 
 import BHOItemCategory from './bho_item_category.model';
 import BHOItemSet from './bho_item_set.model';
-/*
-export const bho_item_model = (sequelize: Sequelize, bho_item_set, bho_item_category) => {
-    return sequelize.define("bho_item", {
-        id: {
-          primaryKey: true,
-          type: DataTypes.INTEGER,
-          allowNull: false
-        },
-        item_name: {
-          type: DataTypes.STRING,
-          allowNull: false
-        },
-        in_stock: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
-        item_description: {
-            type: DataTypes.STRING(1024),
-            allowNull: false
-        },
-        category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: bho_item_category,
-              key: 'id',
-            },
-            allowNull: false
-        },
-        size: {
-            type: DataTypes.STRING,
-        },
-        item_image_url: {
-            type: DataTypes.STRING(1024),
-            allowNull: false
-        },
-        set_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: bho_item_set,
-              key: 'id',
-            },
-        }
-    })
-}
-*/
+
 type BHOItemAttributes = {
   id: number,
   item_name: string,
