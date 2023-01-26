@@ -4,9 +4,9 @@ import { sequelizeConnection } from './loaders/sequelize';
 import { initializeModels } from './models';
 import BHOItemCategory from './models/bho_item_category.model';
 const port = process.env.PORT || 80;
-/*
+
 configureEndpoints(express_app);
-*/
+
 //TODO: Add shit to make some fields optional in the creation of an object (not all)
 express_app.listen(port, async () => {
   await sequelizeConnection()
