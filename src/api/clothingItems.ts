@@ -1,7 +1,8 @@
 import databaseConnection from "../loaders/postgres";
-import { Express } from 'express';
+import { Express, Request } from 'express';
 import { CreateClothingItemRequest } from "@uark-acm/bho-data-models/lib";
 import { getItems } from "../services/clothingItemsService";
+import { BHOItemCreationAttributes } from "../models/bho_item.model";
 
 const configureClothingItemEndpoints = (app: Express) => {
     app.get('/clothingItems', async (req, res) => {
@@ -9,7 +10,7 @@ const configureClothingItemEndpoints = (app: Express) => {
        res.send(clothes);
     });
 
-    app.post('/clothingItems', (req, res) => {
+    app.post('/clothingItems', (req: Request<object, string, BHOItemCreationAttributes>, res) => {
         res.send("return the created object here");
     });
 

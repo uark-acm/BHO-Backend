@@ -6,7 +6,7 @@ type BHOItemSetAttributes = {
   set_type: string,
 };
 
-type BHOItemSetCreationAttributes = Optional<BHOItemSetAttributes, 'id'>;
+export type BHOItemSetCreationAttributes = Optional<BHOItemSetAttributes, 'id'>;
 
 class BHOItemSet extends Model<BHOItemSetAttributes, BHOItemSetCreationAttributes> {
   declare id: number;

@@ -7,7 +7,7 @@ type BHOItemCategoryAttributes = {
     sizes: string[]
 };
   
-type BHOItemCategoryCreationAttributes = Optional<BHOItemCategoryAttributes, 'id'>;
+export type BHOItemCategoryCreationAttributes = Optional<BHOItemCategoryAttributes, 'id'>;
 
 class BHOItemCategory extends Model<BHOItemCategoryAttributes, BHOItemCategoryCreationAttributes> {
     declare id: number;

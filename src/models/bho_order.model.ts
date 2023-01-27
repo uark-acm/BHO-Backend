@@ -13,7 +13,7 @@ type BHOOrderAttributes = {
     order_status: string;
 }
   
-type BHOOrderCreationAttributes = Optional<BHOOrderAttributes, "id">
+export type BHOOrderCreationAttributes = Optional<BHOOrderAttributes, "id">
   
 class BHOOrder extends Model<BHOOrderAttributes, BHOOrderCreationAttributes> {
     declare id: number;

@@ -11,7 +11,7 @@ type BHOBorrowRequestAttributes = {
     date_in: Date
 };
   
-type BHOBorrowRequestCreationAttributes = Optional<BHOBorrowRequestAttributes, 'id'>;
+export type BHOBorrowRequestCreationAttributes = Optional<BHOBorrowRequestAttributes, 'id'>;
 
 class BHOBorrowRequest extends Model<BHOBorrowRequestAttributes, BHOBorrowRequestCreationAttributes> {
     declare id: number;
