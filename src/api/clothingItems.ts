@@ -1,6 +1,4 @@
-import databaseConnection from "../loaders/postgres";
 import { Express, Request } from 'express';
-import { CreateClothingItemRequest } from "@uark-acm/bho-data-models/lib";
 import { getItems } from "../services/clothingItemsService";
 import { BHOItemCreationAttributes } from "../models/bho_item.model";
 
