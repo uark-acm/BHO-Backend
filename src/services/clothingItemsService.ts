@@ -6,7 +6,7 @@ export const getItems = async (): Promise<BHOItem[]> => {
     return await BHOItem.findAll()
 } 
 
-export const createItem = async (bhoItem: BHOItemCreationAttributes) => {
-    await BHOItem.create(bhoItem)
+export const createItem = async (bhoItem: BHOItemCreationAttributes): Promise<BHOItem> => {
+    return await BHOItem.create(bhoItem)
 }
  

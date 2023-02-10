@@ -1,5 +1,5 @@
 import { Express, Request } from 'express';
-import { getItems } from "../services/clothingItemsService";
+import { createItem, getItems } from "../services/clothingItemsService";
 import BHOItem, { BHOItemCreationAttributes } from "../models/bho_item.model";
 import { BHOItemCreateRequest } from '@uark-acm/bho-data-models/lib';
 
@@ -9,7 +9,8 @@ const configureClothingItemEndpoints = (app: Express) => {
        res.send(clothes);
     });
 
-    app.post('/clothingItems', (req: Request<object, string, BHOItemCreateRequest>, res) => {
+    app.post('/clothingItems', async (req: Request<object, string, BHOItemCreateRequest>, res) => {
+        const clothingItem = await createItem(req.BHOItemCreateRequest)
         res.send("return the created object here");
     });
 
