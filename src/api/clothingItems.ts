@@ -10,15 +10,15 @@ const configureClothingItemEndpoints = (app: Express) => {
     });
 
     app.post('/clothingItems', async (req: Request<object, string, BHOItemCreateRequest>, res) => {
-        const request = req.body
+        const { name, description, category_id, size, image, set_id } = req.body
         const attributes: BHOItemCreationAttributes = {
-            item_name: request.name,
+            item_name: name,
             in_stock: true,
-            item_description: request.description,
-            category_id: request.category_id,
-            size: request.size,
-            item_image_url: request.image,
-            set_id: request.set_id,
+            item_description: description,
+            category_id: category_id,
+            size: size,
+            item_image_url: image,
+            set_id: set_id,
         }
         const clothingItem = await createItem(attributes)
         res.send("return the created object here");
