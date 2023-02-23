@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv';
+import * as dotenv from 'dotenv'
 import { Pool } from 'pg'
 
 dotenv.config()
@@ -6,9 +6,9 @@ dotenv.config()
 const databaseConnection = new Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: {
-      rejectUnauthorized: false
-    }
+        rejectUnauthorized: false,
+    },
 })
-databaseConnection.connect();
+databaseConnection.connect()
 
-export default databaseConnection;
+export default databaseConnection

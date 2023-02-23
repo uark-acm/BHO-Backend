@@ -1,7 +1,7 @@
-import { Express } from "express";
-import configureCategoriesEndpoints from "./categories";
-import configureClothingItemEndpoints from "./clothingItems";
-import configureOrderEndpoints from "./orders";
+import { Express } from 'express'
+import configureCategoriesEndpoints from './categories'
+import configureClothingItemEndpoints from './clothingItems'
+import configureOrderEndpoints from './orders'
 
 const configureEndpoints = (express_app: Express) => {
     configureClothingItemEndpoints(express_app)
@@ -9,4 +9,4 @@ const configureEndpoints = (express_app: Express) => {
     configureCategoriesEndpoints(express_app)
 }
 
-export default configureEndpoints;
+export default configureEndpoints
