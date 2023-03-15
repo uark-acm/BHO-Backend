@@ -3,8 +3,12 @@ import { getCategories } from '../services/categoriesService'
 
 const configureCategoriesEndpoints = (app: Express) => {
     app.get('/categories', async (req, res) => {
-        const categories = await getCategories()
-        res.send(categories)
+        try {
+            const categories = await getCategories()
+            res.send(categories)
+        } catch (error: any) {
+            res.send(error)
+        }
     })
 }
 
