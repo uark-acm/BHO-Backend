@@ -1,30 +1,30 @@
-import { Model, Optional, DataTypes } from 'sequelize'
-import { sequelize } from '../loaders/sequelize'
-import BHOItem from './bho_item.model'
-import BHOOrder from './bho_order.model'
+import { Model, Optional, DataTypes } from 'sequelize';
+import { sequelize } from '../loaders/sequelize';
+import BHOItem from './bho_item.model';
+import BHOOrder from './bho_order.model';
 
 type BHOBorrowRequestAttributes = {
-    id: number
-    item_id: number
-    order_id: number
-    date_out: Date
-    date_in: Date
-}
+    id: number;
+    item_id: number;
+    order_id: number;
+    date_out: Date;
+    date_in: Date;
+};
 
 export type BHOBorrowRequestCreationAttributes = Optional<
     BHOBorrowRequestAttributes,
     'id'
->
+>;
 
 class BHOBorrowRequest extends Model<
     BHOBorrowRequestAttributes,
     BHOBorrowRequestCreationAttributes
 > {
-    declare id: number
-    declare item_id: number
-    declare order_id: number
-    declare date_out: Date
-    declare date_in: Date
+    declare id: number;
+    declare item_id: number;
+    declare order_id: number;
+    declare date_out: Date;
+    declare date_in: Date;
 }
 
 BHOBorrowRequest.init(
@@ -62,6 +62,6 @@ BHOBorrowRequest.init(
         tableName: 'bho_borrow_request',
         sequelize: sequelize,
     }
-)
+);
 
-export default BHOBorrowRequest
+export default BHOBorrowRequest;

@@ -1,24 +1,24 @@
-import { Model, Optional, DataTypes } from 'sequelize'
-import { sequelize } from '../loaders/sequelize'
+import { Model, Optional, DataTypes } from 'sequelize';
+import { sequelize } from '../loaders/sequelize';
 
 type BHOItemCategoryAttributes = {
-    id: number
-    category_name: string
-    sizes: string[]
-}
+    id: number;
+    category_name: string;
+    sizes: string[];
+};
 
 export type BHOItemCategoryCreationAttributes = Optional<
     BHOItemCategoryAttributes,
     'id'
->
+>;
 
 class BHOItemCategory extends Model<
     BHOItemCategoryAttributes,
     BHOItemCategoryCreationAttributes
 > {
-    declare id: number
-    declare category_name: string
-    declare sizes: string[]
+    declare id: number;
+    declare category_name: string;
+    declare sizes: string[];
 }
 
 BHOItemCategory.init(
@@ -42,6 +42,6 @@ BHOItemCategory.init(
         tableName: 'bho_item_category',
         sequelize: sequelize,
     }
-)
+);
 
-export default BHOItemCategory
+export default BHOItemCategory;
