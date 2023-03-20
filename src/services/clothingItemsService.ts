@@ -1,12 +1,12 @@
-import databaseConnection from '../loaders/postgres'
-import BHOItem, { BHOItemCreationAttributes } from '../models/bho_item.model'
+import databaseConnection from '../loaders/postgres';
+import BHOItem, { BHOItemCreationAttributes } from '../models/bho_item.model';
 
 export const getItems = async (): Promise<BHOItem[]> => {
-    return await BHOItem.findAll()
-}
+    return await BHOItem.findAll();
+};
 
 export const createItem = async (
     bhoItem: BHOItemCreationAttributes
 ): Promise<BHOItem> => {
-    return await BHOItem.create(bhoItem)
-}
+    return await BHOItem.create(bhoItem);
+};
