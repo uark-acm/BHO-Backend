@@ -1,7 +1,7 @@
-import { Express, Request } from 'express'
-import { createItem, getItems } from '../services/clothingItemsService'
-import BHOItem, { BHOItemCreationAttributes } from '../models/bho_item.model'
-import { BHOItemCreateRequest } from '@uark-acm/bho-data-models/lib'
+import { Express, Request } from 'express';
+import { createItem, getItems } from '../services/clothingItemsService';
+import BHOItem, { BHOItemCreationAttributes } from '../models/bho_item.model';
+import { BHOItemCreateRequest } from '@uark-acm/bho-data-models/lib';
 
 const configureClothingItemEndpoints = (app: Express) => {
     app.get(
@@ -13,8 +13,9 @@ const configureClothingItemEndpoints = (app: Express) => {
             } catch (error: any) {
                 res.send(error)
             }
+
         }
-    )
+    );
 
     app.post(
         '/clothingItems',
@@ -37,11 +38,11 @@ const configureClothingItemEndpoints = (app: Express) => {
                 res.send(error)
             }
         }
-    )
+    );
 
     app.get('/', (req, res) => {
-        res.send('test endpoint')
-    })
-}
+        res.send('test endpoint');
+    });
+};
 
-export default configureClothingItemEndpoints
+export default configureClothingItemEndpoints;

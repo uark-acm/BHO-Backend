@@ -1,30 +1,30 @@
-import { Model, Optional, DataTypes } from 'sequelize'
-import { sequelize } from '../loaders/sequelize'
+import { Model, Optional, DataTypes } from 'sequelize';
+import { sequelize } from '../loaders/sequelize';
 
 type BHOOrderAttributes = {
-    id: number
-    user_name: string
-    user_email: string
-    user_is_international: string
-    user_reason?: string
-    event_date?: Date
-    order_placed: Date
-    requested_pickup: Date
-    order_status: string
-}
+    id: number;
+    user_name: string;
+    user_email: string;
+    user_is_international: string;
+    user_reason?: string;
+    event_date?: Date;
+    order_placed: Date;
+    requested_pickup: Date;
+    order_status: string;
+};
 
-export type BHOOrderCreationAttributes = Optional<BHOOrderAttributes, 'id'>
+export type BHOOrderCreationAttributes = Optional<BHOOrderAttributes, 'id'>;
 
 class BHOOrder extends Model<BHOOrderAttributes, BHOOrderCreationAttributes> {
-    declare id: number
-    declare user_name: string
-    declare user_email: string
-    declare user_is_international: string
-    declare user_reason?: string
-    declare event_date?: Date
-    declare order_placed: Date
-    declare requested_pickup: Date
-    declare order_status: string
+    declare id: number;
+    declare user_name: string;
+    declare user_email: string;
+    declare user_is_international: string;
+    declare user_reason?: string;
+    declare event_date?: Date;
+    declare order_placed: Date;
+    declare requested_pickup: Date;
+    declare order_status: string;
 }
 
 BHOOrder.init(
@@ -70,6 +70,6 @@ BHOOrder.init(
         tableName: 'bho_order',
         sequelize: sequelize,
     }
-)
+);
 
-export default BHOOrder
+export default BHOOrder;

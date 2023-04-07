@@ -1,5 +1,5 @@
-import { Express } from 'express'
-import { getCategories } from '../services/categoriesService'
+import { Express } from 'express';
+import { getCategories } from '../services/categoriesService';
 
 const configureCategoriesEndpoints = (app: Express) => {
     app.get('/categories', async (req, res) => {
@@ -12,4 +12,4 @@ const configureCategoriesEndpoints = (app: Express) => {
     })
 }
 
-export default configureCategoriesEndpoints
+export default configureCategoriesEndpoints;
