@@ -22,7 +22,7 @@ const configureClothingItemEndpoints = (app: Express) => {
 
     app.post(
         '/clothingItems',
-        async (req: Request<object, string, BHOItemCreateRequest>, res) => {
+        async (req: Request<object, BHOItem, BHOItemCreateRequest>, res) => {
             try {
                 const { name, description, category_id, size, image, set_id } =
                     req.body;
@@ -35,8 +35,8 @@ const configureClothingItemEndpoints = (app: Express) => {
                     item_image_url: image,
                     set_id: set_id,
                 };
-                await createItem(attributes);
-                res.send('Item posted successfully.');
+                const newItem: BHOItem = await createItem(attributes);
+                res.send(newItem);
             } catch (error: any) {
                 res.send(error);
             }
