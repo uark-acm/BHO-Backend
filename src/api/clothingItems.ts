@@ -1,5 +1,9 @@
 import { Express, Request } from 'express';
-import { createItem, getItems } from '../services/clothingItemsService';
+import {
+    createItem,
+    deleteItem,
+    getItems,
+} from '../services/clothingItemsService';
 import BHOItem, { BHOItemCreationAttributes } from '../models/bho_item.model';
 import { BHOItemCreateRequest } from '@uark-acm/bho-data-models/lib';
 
@@ -8,21 +12,20 @@ const configureClothingItemEndpoints = (app: Express) => {
         '/clothingItems',
         async (req: Request<object, BHOItem[], BHOItemCreateRequest>, res) => {
             try {
-                const clothes = await getItems()
-                res.send(clothes)
+                const clothes = await getItems();
+                res.send(clothes);
             } catch (error: any) {
-                res.send(error)
+                res.send(error);
             }
-
         }
     );
 
     app.post(
         '/clothingItems',
-        async (req: Request<object, string, BHOItemCreateRequest>, res) => {
+        async (req: Request<object, BHOItem, BHOItemCreateRequest>, res) => {
             try {
                 const { name, description, category_id, size, image, set_id } =
-                    req.body
+                    req.body;
                 const attributes: BHOItemCreationAttributes = {
                     item_name: name,
                     in_stock: true,
@@ -31,11 +34,24 @@ const configureClothingItemEndpoints = (app: Express) => {
                     size: size,
                     item_image_url: image,
                     set_id: set_id,
-                }
-                await createItem(attributes)
-                res.send('Item posted successfully.')
+                };
+                const newItem: BHOItem = await createItem(attributes);
+                res.send(newItem);
             } catch (error: any) {
-                res.send(error)
+                res.send(error);
+            }
+        }
+    );
+
+    app.delete(
+        '/clothingItems',
+        async (req: Request<object, string, BHOItem>, res) => {
+            try {
+                const { id } = req.body;
+                await deleteItem(id);
+                res.send('Item deleted successfully.');
+            } catch (error: any) {
+                res.send(error);
             }
         }
     );
