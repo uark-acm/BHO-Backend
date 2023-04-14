@@ -1,7 +1,7 @@
 import { Model, Optional, DataTypes } from 'sequelize';
 import { sequelize } from '../loaders/sequelize';
 
-type BHOOrderAttributes = {
+type OrderAttributes = {
     id: number;
     user_name: string;
     user_email: string;
@@ -13,9 +13,9 @@ type BHOOrderAttributes = {
     order_status: string;
 };
 
-export type BHOOrderCreationAttributes = Optional<BHOOrderAttributes, 'id'>;
+export type OrderCreationAttributes = Optional<OrderAttributes, 'id'>;
 
-class BHOOrder extends Model<BHOOrderAttributes, BHOOrderCreationAttributes> {
+class Order extends Model<OrderAttributes, OrderCreationAttributes> {
     declare id: number;
     declare user_name: string;
     declare user_email: string;
@@ -27,7 +27,7 @@ class BHOOrder extends Model<BHOOrderAttributes, BHOOrderCreationAttributes> {
     declare order_status: string;
 }
 
-BHOOrder.init(
+Order.init(
     {
         id: {
             primaryKey: true,
@@ -72,4 +72,4 @@ BHOOrder.init(
     }
 );
 
-export default BHOOrder;
+export default Order;
