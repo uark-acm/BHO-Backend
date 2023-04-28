@@ -1,7 +1,7 @@
 import { Model, Optional, DataTypes } from 'sequelize';
 import { sequelize } from '../loaders/sequelize';
 import BHOItem from './bho_item.model';
-import BHOOrder from './bho_order.model';
+import Order from './bho_order.model';
 
 type BHOBorrowRequestAttributes = {
     id: number;
@@ -46,7 +46,7 @@ BHOBorrowRequest.init(
         order_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: BHOOrder,
+                model: Order,
                 key: 'id',
             },
             allowNull: false,
