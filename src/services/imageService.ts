@@ -11,5 +11,5 @@ export const uploadImage = async (file: File) => {
         Body: Buffer.from(await file.arrayBuffer()),
         ContentType: file.type,
     };
-    return (await s3.upload(params).promise()).Key;
+    return (await s3.upload(params).promise()).Location;
 };
